@@ -59,5 +59,8 @@ jobs:
           npm ci
 
       - name: Run lint test
+        env:
+          DEVELOCITY_ACCESS_KEY: ${{ secrets.DEVELOCITY_ACCESS_KEY }}
+          NODE_OPTIONS: -r @gradle-tech/develocity-agent/preload
         run: |
           npm run lint
